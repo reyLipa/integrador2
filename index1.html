@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="nav" >
+        <a class="nav-link" href="index1.html">Principal</a>
+        <a class="nav-link" href="index.html">Formulario</a>
+        <a class="nav-link" href="index2.html">Galeria</a>
+        
+      </nav>
+
+      <section class="contenedor">
+        <section class="cont"><h2>Tu Aseguradora con todo lo que Necesitas</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptates omnis aut. Minus sed sint aliquid ullam quia labore optio in iste illo dolorem reiciendis hic placeat culpa commodi, tempore similique eos libero architecto non a! Ea, vero hic? Ipsa rerum quis corporis necessitatibus nostrum illo placeat molestias exercitationem neque.
+    
+            </p></section>
+        
+        <div></div>
+    </section>
+
+    <footer>
+        <p>2024 Bootcamp-Java Developer </p>
+       </footer>
+      
+      <script>
+        fetch('https://picsum.photos/v2/list')
+    .then((api) => {
+       
+        return api.json()
+    })
+    .then((inf) => {
+        console.log(inf)
+        console.log(inf[8].download_url)
+
+let imagen='';
+
+//         // inf.forEach(element => {
+//         //    console.log(element.url)
+          imagen=`<div><img src="${inf[8].download_url}" class=im2></div>`;
+            
+//         //  });
+         document.querySelector('div').innerHTML=imagen;
+
+    })
+      </script>
+</body>
+</html>

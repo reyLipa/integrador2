@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav" >
+        <a class="nav-link" href="index1.html">Principal</a>
+        <a class="nav-link" href="index.html">Formulario</a>
+        <a class="nav-link" href="index2.html">Galeria</a>
+        
+      </nav>
+    
+<h1>Galeria de Imagenes</h1>
+<main></main>
+<footer>
+    <p>2024 Bootcamp-Java Developer </p>
+   </footer>
+<script>
+    fetch('https://picsum.photos/v2/list')
+        .then((api) => {
+            return api.json();
+        })
+        .then((inf) => {
+            console.log(inf);
+
+            let imagenes = '';
+
+            inf.forEach(element => {
+                console.log(element.download_url);
+                imagenes += `<div><img src="${element.download_url}" class="im"></div>`;
+            });
+
+            document.querySelector('main').innerHTML = imagenes;
+        })
+        
+</script>
+</body>
+</html>
